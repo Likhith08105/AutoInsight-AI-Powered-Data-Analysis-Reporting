@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title or "AutoInsight Summary" }}</title>
+
+  <style>
+    :root {
+      --primary: #007bff;
+      --secondary: #00c6ff;
+      --bg: #f8f9fa;
+      --text-dark: #212529;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .container:hover {
+      transform: translateY(-3px);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 600px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border: 1px solid #e0e0e0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    th {
+      background: var(--primary);
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+      padding-bottom: 25px;
+    }
+
+    footer span {
+      color: var(--primary);
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <header>📊 AutoInsight - Smart Data Summary</header>
+
+  <div class="container">
+    <h2>Dataset Summary Report</h2>
+    <p>Your uploaded dataset has been analyzed. Here’s a detailed summary:</p>
+
+    {% for table in tables %}
+      <div class="table-wrapper">
+        {{ table | safe }}
+      </div>
+    {% endfor %}
+
+    <a class="btn" href="/">← Upload Another File</a>
+  </div>
+
+ <footer style="text-align:center; margin-top:40px; color:#555; font-size:14px;">
+  <span style="color:#007bff; font-weight:600;">AutoInsight</span> © 2025 | Powered by <span style="color:#00c6ff; font-weight:600;">Likhith Tech Solutions</span>
+</footer>
+</body>
+</html>
