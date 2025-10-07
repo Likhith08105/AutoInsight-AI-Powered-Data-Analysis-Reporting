@@ -112,7 +112,7 @@ The report includes:
 
 ## 🧑‍🎓 Author
 
-<Likhith Kumar Paidimarri> 
+**<Likhith Kumar Paidimarri> **
 Final Year B.Tech | Data Science & AI Enthusiast  
 [LinkedIn](https://www.linkedin.com/in/likhith-kumar-paidimarri-312603258/) • [GitHub](https://github.com/Likhith08105)
 
